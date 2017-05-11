@@ -9,15 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
-var shared_module_1 = require("./shared/shared.module");
-var admin_module_1 = require("./admin/admin.module");
-var routing_module_1 = require("./routing.module");
-var game_module_1 = require("./games/game.module");
-var global_module_1 = require("./global/global.module");
 var application_component_1 = require("./application/application.component");
-var home_component_1 = require("./home/home.component");
-var about_component_1 = require("./about/about.component");
-var game_service_1 = require("./services/game-service/game-service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,21 +17,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            shared_module_1.SharedModule,
-            http_1.HttpModule,
-            admin_module_1.AdminModule,
-            routing_module_1.AppRoutingModule,
-            global_module_1.GlobalModule,
-            game_module_1.GameModule
-        ],
-        declarations: [
-            application_component_1.default,
-            home_component_1.default,
-            about_component_1.default
-        ],
-        providers: [game_service_1.GameService, { provide: "IS_VERBOSE_LOGGER", useValue: true }],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
+        declarations: [application_component_1.default],
         bootstrap: [application_component_1.default]
     })
 ], AppModule);

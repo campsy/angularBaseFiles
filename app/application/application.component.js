@@ -16,8 +16,7 @@ ApplicationComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'app',
-        templateUrl: 'application.component.html',
-        styleUrls: ['application.component.css']
+        template: 'Hello World!',
     })
 ], ApplicationComponent);
 exports.default = ApplicationComponent;
