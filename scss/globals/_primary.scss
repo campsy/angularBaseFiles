@@ -1,0 +1,33 @@
+﻿@import '../helpers/_variables.scss';
+@import '../helpers/_mixins.scss';
+/*=================================================================================================
+Primary Size for -Text,Headings,bold,Span,Links and Neutral Colors
+=================================================================================================*/
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    cursor: auto;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    background: $Blue;
+    font-family: $Standard;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6  {
+
+}

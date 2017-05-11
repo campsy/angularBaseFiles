@@ -1,0 +1,263 @@
+﻿//  =================================================================================================
+//  MIXINS
+//  =================================================================================================
+@import '../helpers/_variables.scss';
+
+//  =============================================================================================
+//  Sets background to radial gradient with noise
+//  @include radial-noise-background($center,$edge)
+//  =============================================================================================
+@mixin radial-noise-background($center,$edge) {
+    background: url(/images/global/backgroundoverlaynoise.png), radial-gradient(500px 400px at top, $center,$edge);
+}
+
+@mixin radial-noise-background-with-image($center,$edge, $overlayImage) {
+    background: url($overlayImage) no-repeat left top, url(/images/global/backgroundoverlaynoise.png), radial-gradient(500px 400px at top, $center,$edge);
+
+    @include desktop {
+        background: url($overlayImage) no-repeat right top, url(/images/global/backgroundoverlaynoise.png), radial-gradient(500px 400px at top, $center,$edge);
+    }
+}
+
+@mixin linear-noise-background($top,$bottom) {
+    background: url(/images/global/backgroundoverlaynoise.png), linear-gradient(to bottom, $top,$bottom);
+}
+
+@mixin light-page-background{
+        background: url(/images/about/curtains.png) repeat-x, 
+            url(/images/global/sidescreentileleft.png) repeat-y -40px 0, 
+            url(/images/global/sidescreentileright.png) repeat-y calc(100% + 40px) 0, 
+            linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
+            linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8), rgba(252, 246, 230,0.9)), 
+            url(/images/global/backgroundoverlaynoise.png);
+        background-color: $OffWhite;
+
+        @include desktop {
+            background: url(/images/about/curtains.png) repeat-x, 
+                url(/images/global/sidescreentileleft.png) repeat-y, 
+                url(/images/global/sidescreentileright.png) repeat-y 100% 0, 
+                linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
+                linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8),rgba(252, 246, 230,0.9)), 
+                url(/images/global/backgroundoverlaynoise.png);
+            background-color: $OffWhite;
+        }
+}
+
+@mixin light-page-background-without-curtains{
+        background: url(/images/global/sidescreentileleft.png) repeat-y -40px 0, 
+            url(/images/global/sidescreentileright.png) repeat-y calc(100% + 40px) 0, 
+            linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
+            linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8), rgba(252, 246, 230,0.9)), 
+            url(/images/global/backgroundoverlaynoise.png);
+        background-color: $OffWhite;
+
+        @include desktop {
+            background: url(/images/global/sidescreentileleft.png) repeat-y, 
+                url(/images/global/sidescreentileright.png) repeat-y 100% 0, 
+                linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
+                linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8),rgba(252, 246, 230,0.9)), 
+                url(/images/global/backgroundoverlaynoise.png);
+            background-color: $OffWhite;
+        }
+}
+
+//  =============================================================================================
+//  Sets max width for the site - also the padding
+//  @include tablet{
+//      /*Content Here*/
+//  };
+//  =============================================================================================
+@mixin tablet {
+    @media (min-width: $mediumScreen) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $largeScreen) {
+        @content;
+    }
+}
+
+@mixin no-mobile {
+    @media (max-width: $no-mobile) {
+        @content;
+    }
+}
+
+
+
+//  =============================================================================================
+//  Sets max width for the site - also the padding
+//  @include site-width();
+//  =============================================================================================
+@mixin site-width() {
+    width: auto;
+    max-width: 960px;
+}
+
+
+//  =============================================================================================
+//  Set every border radius or just a single side without worrying about all those prefixes.
+//  @include border-radius(5px); OR @include border-top-radius(10px);
+//  =============================================================================================
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box; // Prevents the background colour from leaking outside the border:
+}
+// Single side border-radius
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+//  =============================================================================================
+//  Gradient Mixin Start/Stop Points
+//  @include linear-gradient(#ffffff, 0%, #000, 100%);
+//  =============================================================================================
+@mixin linear-gradient($top, $topValue, $bottom, $bottomValue) {
+    background: $top; // Old browsers
+    background: -moz-linear-gradient(top, $top, $topValue, $bottom, $bottomValue); // FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); // Chrome,Safari4+
+    background: -webkit-linear-gradient(top, $top, $topValue, $bottom, $bottomValue); // Chrome10+,Safari5.1+
+    background: -o-linear-gradient(top, $top, $topValue, $bottom, $bottomValue); // Opera 11.10+ */
+    background: -ms-linear-gradient(top, $top, $topValue, $bottom, $bottomValue); // IE10+
+    background: linear-gradient(to bottom, $top, $topValue, $bottom, $bottomValue); // W3C
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); // IE6-9
+}
+
+//  =============================================================================================
+//  Box shadow Mixin
+//  @include box-shadow(0px, 0px, 2px, #000);
+//  =============================================================================================
+@mixin box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+    -webkit-box-shadow: $horizontal $vertical $blur $color;
+    -moz-box-shadow: $horizontal $vertical $blur $color;
+    box-shadow: $horizontal $vertical $blur $color;
+}
+
+@mixin inset-box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $spacer: 0px, $color: #CCC) {
+    -webkit-box-shadow: inset $horizontal $vertical $spacer $blur $color;
+    -moz-box-shadow: inset $horizontal $vertical $blur $spacer $color;
+    box-shadow: inset $horizontal $vertical $blur $spacer $color;
+}
+
+
+//  =============================================================================================
+//  This mixin sets SVG background images with PNG and retina fallback
+//  @include transition(all 0.3s linear);
+//  @include transition(color 0.3s ease);
+//  =============================================================================================
+@mixin transition($args) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+//  =============================================================================================
+//  Centre Content Mixin
+//  @include centre();
+//  =============================================================================================
+@mixin centre() {
+    width: auto;
+    margin: 0px auto;
+    display: block;
+}
+
+//  =============================================================================================
+//  Centre Content V and H Mixin
+//  @include centreAll();
+//  =============================================================================================
+@mixin centreAll {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//  =============================================================================================
+//  Centre Content V and H Mixin
+//  @include centreVerticle();
+//  =============================================================================================
+@mixin centreVerticle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//  =============================================================================================
+//  This mixin sets the font size in rem's with a em and px fallback
+//  @include font-size(16);
+//  =============================================================================================
+@mixin font-size($sizeValue) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 16 * 1) + em;
+    font-size: ($sizeValue / 16 * 1) + rem;
+}
+
+//  =============================================================================================
+//  This mixin sets the line height in rem's with a em and px fallback
+//  @include line-height (16);
+//  =============================================================================================
+@mixin line-height($heightValue) {
+    line-height: $heightValue + px;
+    line-height: ($heightValue / 16 * 1) + em;
+    line-height: ($heightValue / 16 * 1) + rem;
+}
+
+//  =============================================================================================
+//  This mixin sets the opacity
+//  @include opacity(0.8);
+//  =============================================================================================
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//  =============================================================================================
+//  This mixin creates the clearfix
+//  @include clearfix();
+//  =============================================================================================
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}

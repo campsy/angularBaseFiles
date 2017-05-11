@@ -1,0 +1,49 @@
+﻿@import '../helpers/_mixins.scss';
+@import '../helpers/_variables.scss';
+
+.decoratedTitle {
+    color: #fffbef;
+    text-align: center;
+    display: block;
+    @include font-size(40);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:before,
+    &:after {
+        flex-grow: 1;
+        content: " ";
+        display: block;
+        height: 22px;
+        margin: 5px;
+        padding: 0 19px 0 3px;
+        background: url(/images/titles/patternendpiecebrown.png) no-repeat 100% 0, url(/images/titles/patternmiddleslicepiecebrown.png) repeat-x content-box, url(/images/titles/patterntopleftpiecebrown.png) no-repeat 0 0;
+    }
+
+    &.light {
+        &:before,
+        &:after {
+            background: url(/images/titles/patternendpiecewhite.png) no-repeat 100% 0, url(/images/titles/patternmiddleslicepiecewhite.png) repeat-x content-box, url(/images/titles/patterntopleftpiecewhite.png) no-repeat 0 0;
+        }
+    }
+
+    &:before {
+        transform: scaleX(-1);
+    }
+
+    &.leftAlign {
+        text-align: left;
+
+        &:before {
+            display: none;
+        }
+
+        &:after {
+            @include tablet{
+                margin-left:20px;
+            }
+        }
+    }
+}

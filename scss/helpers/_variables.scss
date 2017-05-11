@@ -1,0 +1,35 @@
+// Colours
+	$White : 		#ffffff;
+
+
+// Fonts
+	$Standard : 	"Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+
+
+// Font Sizes
+	$h1 : 			80;
+	$h2 : 			70;
+	$heading : 		40;
+	$paragraph : 	22;
+
+
+// Radius
+	$Radius: 		5px;
+
+
+// Links
+	$link : 		#000;
+	$link-hover : 	#000;
+
+
+// Button Colours
+	$button: 		#fff;
+	$button-hover: 	#000;
+	$cta-radial: 	radial-gradient(circle at 50% 51%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)); 
+
+
+// Screen Sizes - 
+// No media query needed for mobile
+	$mediumScreen: 	41.75em;
+	$largeScreen: 	62.5em;
+	$no-mobile: 	41.75em;
