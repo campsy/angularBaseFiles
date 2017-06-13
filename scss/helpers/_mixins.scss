@@ -4,64 +4,6 @@
 @import '../helpers/_variables.scss';
 
 //  =============================================================================================
-//  Sets background to radial gradient with noise
-//  @include radial-noise-background($center,$edge)
-//  =============================================================================================
-@mixin radial-noise-background($center,$edge) {
-    background: url(/images/global/backgroundoverlaynoise.png), radial-gradient(500px 400px at top, $center,$edge);
-}
-
-@mixin radial-noise-background-with-image($center,$edge, $overlayImage) {
-    background: url($overlayImage) no-repeat left top, url(/images/global/backgroundoverlaynoise.png), radial-gradient(500px 400px at top, $center,$edge);
-
-    @include desktop {
-        background: url($overlayImage) no-repeat right top, url(/images/global/backgroundoverlaynoise.png), radial-gradient(500px 400px at top, $center,$edge);
-    }
-}
-
-@mixin linear-noise-background($top,$bottom) {
-    background: url(/images/global/backgroundoverlaynoise.png), linear-gradient(to bottom, $top,$bottom);
-}
-
-@mixin light-page-background{
-        background: url(/images/about/curtains.png) repeat-x, 
-            url(/images/global/sidescreentileleft.png) repeat-y -40px 0, 
-            url(/images/global/sidescreentileright.png) repeat-y calc(100% + 40px) 0, 
-            linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
-            linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8), rgba(252, 246, 230,0.9)), 
-            url(/images/global/backgroundoverlaynoise.png);
-        background-color: $OffWhite;
-
-        @include desktop {
-            background: url(/images/about/curtains.png) repeat-x, 
-                url(/images/global/sidescreentileleft.png) repeat-y, 
-                url(/images/global/sidescreentileright.png) repeat-y 100% 0, 
-                linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
-                linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8),rgba(252, 246, 230,0.9)), 
-                url(/images/global/backgroundoverlaynoise.png);
-            background-color: $OffWhite;
-        }
-}
-
-@mixin light-page-background-without-curtains{
-        background: url(/images/global/sidescreentileleft.png) repeat-y -40px 0, 
-            url(/images/global/sidescreentileright.png) repeat-y calc(100% + 40px) 0, 
-            linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
-            linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8), rgba(252, 246, 230,0.9)), 
-            url(/images/global/backgroundoverlaynoise.png);
-        background-color: $OffWhite;
-
-        @include desktop {
-            background: url(/images/global/sidescreentileleft.png) repeat-y, 
-                url(/images/global/sidescreentileright.png) repeat-y 100% 0, 
-                linear-gradient(to bottom,rgba(166,112,27,0.25), rgba(166,112,27,0) 120px, rgba(166,112,27,0) calc(100% - 120px), rgba(166,112,27,0.25)), 
-                linear-gradient(to bottom,rgba(252, 246, 230,0.9),rgba(252, 246, 230,0.8),rgba(252, 246, 230,0.9)), 
-                url(/images/global/backgroundoverlaynoise.png);
-            background-color: $OffWhite;
-        }
-}
-
-//  =============================================================================================
 //  Sets max width for the site - also the padding
 //  @include tablet{
 //      /*Content Here*/

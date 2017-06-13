@@ -35,7 +35,8 @@
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "build-css": "node-sass --include-path scss scss/main.scss   css/main.css",
+    // npm run watch-css
+    "build-css": "node-sass --include-path scss scss/main.scss css/main.css --output-style compressed",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   }
 }

@@ -19,13 +19,21 @@
         height: 22px;
         margin: 5px;
         padding: 0 19px 0 3px;
-        background: url(/images/titles/patternendpiecebrown.png) no-repeat 100% 0, url(/images/titles/patternmiddleslicepiecebrown.png) repeat-x content-box, url(/images/titles/patterntopleftpiecebrown.png) no-repeat 0 0;
+        background: 
+            url(/images/titles/.png) no-repeat 100% 0, 
+            url(/images/titles/.png) repeat-x content-box, 
+            url(/images/titles/.png) no-repeat 0 0
+        ;
     }
 
     &.light {
         &:before,
         &:after {
-            background: url(/images/titles/patternendpiecewhite.png) no-repeat 100% 0, url(/images/titles/patternmiddleslicepiecewhite.png) repeat-x content-box, url(/images/titles/patterntopleftpiecewhite.png) no-repeat 0 0;
+            background: 
+                url(/images/titles/.png) no-repeat 100% 0, 
+                url(/images/titles/.png) repeat-x content-box, 
+                url(/images/titles/.png) no-repeat 0 0
+            ;
         }
     }
 
